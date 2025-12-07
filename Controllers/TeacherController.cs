@@ -79,7 +79,7 @@ namespace ELearningSystem.Controllers
             {
                 var teacherId = GetTeacherId();
                 await _teacherService.ScoreSubmission(submissionId, scoreDto, teacherId);
-                return Ok();
+                return NoContent(); // <--- CHANGE TO THIS (Returns 204)
             }
             catch (Exception ex)
             {

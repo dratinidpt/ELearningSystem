@@ -227,7 +227,7 @@ async function viewSubmissions(quizId) {
 
         // This part should run on success, outside the if/else
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-        document.getElementById('quizSubmissions').classList.add('active');
+        document.getElementById('submissionFileLink').href = `/${filePath}`;
 
     } catch (error) {
         console.error('Error loading submissions:', error);
@@ -239,14 +239,8 @@ function backToCourseDetails() {
 }
 
 function viewSubmissionFile(filePath) {
-    // We get the token here to append it as a query param if needed
-    // for file downloads, as 'Authorization' headers can't be set
-    // on a window.open() or <a> tag.
-    // NOTE: This is less secure. A better way is an intermediate
-    // endpoint that validates the token and serves the file.
-    // But for a simple fix, this opens the path.
-    window.open(`${API_BASE}/files/${filePath}`, '_blank');
-}
+    window.open(`/${filePath}`, '_blank');
+}   
 
 // ========== SCORING ==========
 

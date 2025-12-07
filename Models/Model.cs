@@ -136,7 +136,7 @@ namespace ELearningSystem.Models
         public string FilePath { get; set; }
         public DateTime SubmittedDate { get; set; }
         public decimal? Score { get; set; }
-        public string Feedback { get; set; }
+        public string? Feedback { get; set; }
         public DateTime? GradedDate { get; set; }
 
         [ForeignKey("QuizId")]

@@ -136,7 +136,8 @@ async function loadQuizzes(courseId) {
 }
 
 function downloadQuizFile(filePath) {
-    window.open(`${API_BASE}/files/${filePath}`, '_blank');
+    // Files are in wwwroot, so they are accessed directly from the root URL
+    window.open(`/${filePath}`, '_blank');
 }
 
 // ========== SUBMIT ANSWER ==========
